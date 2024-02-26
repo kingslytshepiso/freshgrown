@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="452.0" prefWidth="764.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.freshgrown.TransactionViewController">
+   <children>
+      <MenuBar>
+         <menus>
+            <Menu mnemonicParsing="false" text="Home">
+               <items>
+                  <MenuItem fx:id="cartMnu" mnemonicParsing="false" text="Cart" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Transactions">
+               <items>
+                  <MenuItem fx:id="createTransMnu" mnemonicParsing="false" text="Create" />
+                  <MenuItem fx:id="historyMnu" mnemonicParsing="false" text="History" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Settings">
+               <items>
+                  <MenuItem fx:id="logoutMnu" mnemonicParsing="false" text="Log out" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem fx:id="aboutMnu" mnemonicParsing="false" text="About" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <HBox alignment="CENTER" maxWidth="750.0" prefHeight="98.0" prefWidth="740.0" style="-fx-border-color: black;">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="91.0" prefWidth="425.0">
+                     <children>
+                        <VBox prefHeight="98.0" prefWidth="156.0">
+                           <children>
+                              <HBox prefHeight="47.0" prefWidth="141.0">
+                                 <children>
+                                    <Label text="Transaction ID: " />
+                                    <Label fx:id="idLbl" text="---" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="50.0" prefWidth="141.0">
+                                 <children>
+                                    <Label text="Status: " />
+                                    <Label fx:id="statusLbl" text="---" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="98.0" prefWidth="170.0">
+                           <children>
+                              <HBox prefHeight="50.0" prefWidth="141.0">
+                                 <children>
+                                    <Label text="Date: " />
+                                    <Label fx:id="dateLbl" text="---" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="47.0" prefWidth="141.0">
+                                 <children>
+                                    <Label text="Cashier: " />
+                                    <Label fx:id="cashierLbl" text="---" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="91.0" prefWidth="400.0">
+                     <children>
+                        <VBox prefHeight="98.0" prefWidth="155.0">
+                           <children>
+                              <HBox prefHeight="50.0" prefWidth="141.0">
+                                 <children>
+                                    <Label text="Amount: " />
+                                    <Label fx:id="amountLbl" text="---" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="47.0" prefWidth="141.0">
+                                 <children>
+                                    <Label text="Total Cost: " />
+                                    <Label fx:id="costLbl" text="---" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="98.0" prefWidth="176.0">
+                           <children>
+                              <HBox prefHeight="50.0" prefWidth="141.0">
+                                 <children>
+                                    <Label text="Change: " />
+                                    <Label fx:id="changeLbl" text="---" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="47.0" prefWidth="141.0">
+                                 <children>
+                                    <Label text="Card Number: " />
+                                    <Label fx:id="cardNoLbl" text="---" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </HBox>
+         </children>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </HBox>
+      <VBox alignment="CENTER" prefHeight="279.0" prefWidth="600.0">
+         <children>
+            <HBox alignment="CENTER" maxWidth="750.0" prefHeight="270.0" prefWidth="720.0">
+               <children>
+                  <VBox prefHeight="261.0" prefWidth="728.0">
+                     <children>
+                        <GridPane gridLinesVisible="true" style="-fx-background-color: rgb(0,180,0); -fx-border-color: silver;">
+                           <columnConstraints>
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="Barcode" />
+                              <Label text="Name" GridPane.columnIndex="1" />
+                              <Label text="Price" GridPane.columnIndex="2" />
+                           </children>
+                        </GridPane>
+                        <GridPane fx:id="resultGrid" gridLinesVisible="true" prefHeight="184.0" prefWidth="600.0" style="-fx-border-color: silver;">
+                           <columnConstraints>
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                        <Pagination fx:id="pgBtn" pageCount="1" prefHeight="27.0" prefWidth="600.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </padding>
+      </VBox>
+   </children>
+</VBox>

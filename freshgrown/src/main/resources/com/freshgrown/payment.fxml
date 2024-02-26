@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="412.0" prefWidth="668.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.freshgrown.PaymentController">
+   <children>
+      <MenuBar>
+         <menus>
+            <Menu mnemonicParsing="false" text="Home">
+               <items>
+                  <MenuItem fx:id="cartMnu" mnemonicParsing="false" text="Cart" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Transactions">
+               <items>
+                  <MenuItem fx:id="createTransMnu" mnemonicParsing="false" text="Create" />
+                  <MenuItem fx:id="historyMnu" mnemonicParsing="false" text="History" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Settings">
+               <items>
+                  <MenuItem fx:id="logoutMnu" mnemonicParsing="false" text="Log out" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem fx:id="aboutMnu" mnemonicParsing="false" text="About" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <HBox alignment="CENTER" prefHeight="57.0" prefWidth="600.0">
+         <children>
+            <Label text="Amount due: R">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label fx:id="amountLbl" text="0">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="46.0" prefWidth="600.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="67.0" prefWidth="340.0">
+               <children>
+                  <RadioButton fx:id="cashRdo" mnemonicParsing="false" selected="true" text="Cash payment">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="paymentType" />
+                     </toggleGroup>
+                  </RadioButton>
+               </children>
+            </HBox>
+            <HBox prefHeight="67.0" prefWidth="342.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="67.0" prefWidth="340.0">
+                     <children>
+                        <RadioButton fx:id="cardRdo" mnemonicParsing="false" text="Card payment" toggleGroup="$paymentType" />
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="275.0" prefWidth="600.0">
+         <children>
+            <VBox fx:id="cashContainer" prefHeight="240.0" prefWidth="307.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="37.0" prefWidth="307.0">
+                     <children>
+                        <Label text="Enter amount: R">
+                           <HBox.margin>
+                              <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="cashTxt" prefHeight="25.0" prefWidth="73.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="42.0" prefWidth="307.0">
+                     <children>
+                        <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="17.0" prefWidth="169.0" text="Change: R">
+                           <HBox.margin>
+                              <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="changeLbl" prefHeight="28.0" prefWidth="115.0" text="0">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="TOP_CENTER" prefHeight="185.0" prefWidth="307.0">
+                     <children>
+                        <Button fx:id="cashPayBtn" mnemonicParsing="false" text="Proceed" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+            <Separator orientation="VERTICAL" prefHeight="200.0" />
+            <VBox fx:id="cardContainer" prefHeight="275.0" prefWidth="305.0">
+               <children>
+                  <HBox alignment="TOP_CENTER" prefHeight="58.0" prefWidth="296.0">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="58.0" prefWidth="147.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="32.0" prefWidth="147.0" text="First Name" />
+                              <TextField fx:id="firstNameTxt" />
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="58.0" prefWidth="147.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="32.0" prefWidth="147.0" text="Last Name" />
+                              <TextField fx:id="lastNameTxt" />
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="TOP_CENTER" prefHeight="58.0" prefWidth="296.0">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="58.0" prefWidth="147.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="32.0" prefWidth="147.0" text="Bank" />
+                              <ComboBox fx:id="bankCmb" prefWidth="150.0" />
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="58.0" prefWidth="147.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="32.0" prefWidth="147.0" text="Card Number" />
+                              <TextField fx:id="cardNoTxt" />
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="TOP_CENTER" prefHeight="58.0" prefWidth="296.0">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="58.0" prefWidth="147.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="32.0" prefWidth="147.0" text="Expiration Date" />
+                              <DatePicker fx:id="expDate" />
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="58.0" prefWidth="147.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="32.0" prefWidth="147.0" text="Security Number" />
+                              <TextField fx:id="securityNoTxt" />
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="TOP_CENTER" prefHeight="58.0" prefWidth="296.0">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="58.0" prefWidth="147.0">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <children>
+                              <Button fx:id="cardPayBtn" mnemonicParsing="false" text="Proceed" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>
